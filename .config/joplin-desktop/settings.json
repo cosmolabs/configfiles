@@ -1,0 +1,35 @@
+{
+	"$schema": "https://joplinapp.org/schema/settings.json",
+	"locale": "en_US",
+	"api.token": "bcb392e7b9b4dde77f6b7e88ea53d0ff229301d73eba03b4152796f307af346d4f742cbb42dc8593af86060ef7b1362322f5d383379cfe9271e374d4985c7a3e",
+	"markdown.plugin.softbreaks": false,
+	"markdown.plugin.typographer": false,
+	"spellChecker.language": "en-US",
+	"ui.layout": {
+		"key": "root",
+		"children": [
+			{
+				"key": "sideBar",
+				"width": 250,
+				"visible": true
+			},
+			{
+				"key": "noteList",
+				"width": 250,
+				"visible": true
+			},
+			{
+				"key": "editor",
+				"visible": true
+			}
+		],
+		"visible": true
+	},
+	"noteVisiblePanes": [
+		"editor"
+	],
+	"theme": 2,
+	"style.editor.fontSize": 14,
+	"style.editor.fontFamily": "Hack",
+	"dateFormat": "YYYY-MM-DD"
+}
