@@ -78,3 +78,11 @@ alias aria2c-tor="aria2c --seed-time=0"
 
 # User available in the system.
 alias users="cut -d: -f1 /etc/passwd"
+
+#### Crypto currencies ####
+alias crypto="curl rate.sx"
+alias crypto_BTC="curl rate.sx/BTC"
+alias crypto_ETH="curl rate.sx/ETH"
+alias crypto_ADA="curl rate.sx/ADA"
+alias crypto_USDT="curl rate.sx/USDT"
+alias crypto_BUSD="curl rate.sx/BUSD"
