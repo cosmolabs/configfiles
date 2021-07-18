@@ -1,3 +1,8 @@
+#environment variables
+env:
+  TERM: alacritty
+
+
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 window:
   # Startup Mode (changes require restart)
@@ -9,6 +14,7 @@ window:
   startup_mode: Maximized
   title: alacritty
   dynamic_title: true
+  decorations: none
 
   
 cursor:
@@ -20,7 +26,8 @@ cursor:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    shape: Beam
+    shape: Underline
+    blinking: On
     
 
 # Colors (Nord)
@@ -69,7 +76,8 @@ font:
     family: Source Code Pro
     style: Bold Italic
 
-  size: 12.0
+  size: 11.0
+background_opacity: 0.85
 
 
 # Key bindings
@@ -85,4 +93,10 @@ key_bindings:
 - { key: M, mods: Control|Shift, action: ResetFontSize }
 - { key: Home, mods: Control, action: ScrollToTop }
 - { key: End, mods: Control, action: ScrollToBottom }
+- { key: L, mods: Control, action: ClearLogNotice }
 
+debug:
+  persistent_logging: true
+  # Log level can be Off, Error, Warn
+  # Info, Debug, Trace
+  log_level: Error
