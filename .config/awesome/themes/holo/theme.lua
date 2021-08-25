@@ -19,22 +19,22 @@ theme.default_dir                               = require("awful.util").get_them
 theme.icon_dir                                  = os.getenv("HOME") .. "/.config/awesome/themes/holo/icons"
 theme.wallpaper                                 = os.getenv("HOME") .. "/.config/awesome/themes/holo/wall.png"
 theme.font                                      = "Roboto Bold 10"
-theme.taglist_font                              = "Roboto Condensed Regular 8"
+theme.taglist_font                              = "Roboto 8"--"Roboto Condensed Regular 8"
 theme.fg_normal                                 = "#FFFFFF"
-theme.fg_focus                                  = "#0099CC"
-theme.bg_focus                                  = "#303030"
-theme.bg_normal                                 = "#242424"
-theme.fg_urgent                                 = "#CC9393"
-theme.bg_urgent                                 = "#006B8E"
-theme.border_width                              = dpi(3)
+theme.fg_focus                                  = "#172A47"--"#0099CC"
+theme.bg_focus                                  = "#172A47"--"#303030"
+theme.bg_normal                                 = "#172A47"--"#242424"
+theme.fg_urgent                                 = "#172A47"--"#CC9393"
+theme.bg_urgent                                 = "#172A47"--"#006B8E"
+theme.border_width                              = dpi(2)
 theme.border_normal                             = "#252525"
 theme.border_focus                              = "#0099CC"
 theme.taglist_fg_focus                          = "#FFFFFF"
 theme.tasklist_bg_normal                        = "#222222"
 theme.tasklist_fg_focus                         = "#4CB7DB"
-theme.menu_height                               = dpi(20)
-theme.menu_width                                = dpi(160)
-theme.menu_icon_size                            = dpi(32)
+--theme.menu_height                               = dpi(20)
+--theme.menu_width                                = dpi(100)
+--theme.menu_icon_size                            = dpi(2)
 theme.awesome_icon                              = theme.icon_dir .. "/awesome_icon_white.png"
 theme.awesome_icon_launcher                     = theme.icon_dir .. "/awesome_icon.png"
 theme.taglist_squares_sel                       = theme.icon_dir .. "/square_sel.png"
@@ -117,32 +117,10 @@ theme.cal = lain.widget.cal({
     notification_preset = {
         fg = "#FFFFFF",
         bg = theme.bg_normal,
-        position = "bottom_right",
+        position = "top_right",
         font = "Monospace 10"
     }
 })
-
--- Mail IMAP check
---[[ to be set before use
-theme.mail = lain.widget.imap({
-    timeout  = 180,
-    server   = "server",
-    mail     = "mail",
-    password = "keyring get mail",
-    settings = function()
-        mail_notification_preset.fg = "#FFFFFF"
-        mail  = ""
-        count = ""
-
-        if mailcount > 0 then
-            mail = "Mail "
-            count = mailcount .. " "
-        end
-
-        widget:set_markup(markup.font(theme.font, markup(blue, mail) .. markup("#FFFFFF", count)))
-    end
-})
---]]
 
 -- MPD
 local mpd_icon = awful.widget.launcher({ image = theme.mpdl, command = theme.musicplr })
@@ -212,13 +190,6 @@ local bat = lain.widget.bat({
     end
 })
 
--- / fs
---[[ commented because it needs Gio/Glib >= 2.54
-theme.fs = lain.widget.fs({
-    notification_preset = { bg = theme.bg_normal, font = "Monospace 9" },
-})
---]]
-
 -- ALSA volume bar
 theme.volume = lain.widget.alsabar({
     notification_preset = { font = "Monospace 9"},
@@ -246,6 +217,17 @@ local cpu = lain.widget.cpu({
 local cpubg = wibox.container.background(cpu.widget, theme.bg_focus, gears.shape.rectangle)
 local cpuwidget = wibox.container.margin(cpubg, dpi(0), dpi(0), dpi(5), dpi(5))
 
+-- MEM
+local mem_icon = wibox.widget.imagebox(theme.cpu)
+local mem = lain.widget.mem({
+    settings = function()
+        widget:set_markup(space3 .. markup.font(theme.font, "MEM " .. mem_now.used
+                            .. " MB ") .. markup.font("Roboto 5", " "))
+    end
+})
+local membg = wibox.container.background(mem.widget, theme.bg_focus, gears.shape.rectangle)
+local memwidget = wibox.container.margin(membg, dpi(0), dpi(0), dpi(5), dpi(5))
+
 -- Net
 local netdown_icon = wibox.widget.imagebox(theme.net_down)
 local netup_icon = wibox.widget.imagebox(theme.net_up)
@@ -257,15 +239,6 @@ local net = lain.widget.net({
 })
 local netbg = wibox.container.background(net.widget, theme.bg_focus, gears.shape.rectangle)
 local networkwidget = wibox.container.margin(netbg, dpi(0), dpi(0), dpi(5), dpi(5))
-
--- Weather
---[[ to be set before use
-theme.weather = lain.widget.weather({
-    --APPID =
-    city_id = 2643743, -- placeholder (London)
-    notification_preset = { font = "Monospace 9", position = "bottom_right" },
-})
---]]
 
 -- Launcher
 local mylauncher = awful.widget.button({ image = theme.awesome_icon_launcher })
@@ -285,7 +258,7 @@ local barcolor  = gears.color({
     type  = "linear",
     from  = { dpi(32), 0 },
     to    = { dpi(32), dpi(32) },
-    stops = { {0, theme.bg_focus}, {0.25, "#505050"}, {1, theme.bg_focus} }
+    stops = { {0, theme.bg_focus}, {0.5, "#FF4c29"}, {1, theme.bg_focus} }
 })
 
 function theme.at_screen_connect(s)
@@ -320,12 +293,54 @@ function theme.at_screen_connect(s)
     s.mytag = wibox.container.margin(mytaglistcont, dpi(0), dpi(0), dpi(5), dpi(5))
 
     -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons, { bg_focus = theme.bg_focus, shape = gears.shape.rectangle, shape_border_width = 5, shape_border_color = theme.tasklist_bg_normal, align = "center" })
+    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons, { bg_focus = theme.bg_focus, shape = gears.shape.rectangle, shape_border_width = 5, shape_border_color = theme.tasklist_bg_normal, align = "center" })    
+
+    -- Create the top wibox
+    s.mybottomwibox = awful.wibar({ position = "top", screen = s, border_width = dpi(0), height = dpi(25) })
+    --s.borderwibox = awful.wibar({ position = "top", screen = s, height = dpi(1), bg = theme.fg_focus, x = dpi(0), y = dpi(33)})
+
+    -- Add widgets to the bottom wibox
+    s.mybottomwibox:setup {
+        layout = wibox.layout.align.horizontal,
+       {
+            -- Left widgets
+            layout = wibox.layout.fixed.horizontal,
+            mylauncher,
+	        s.mytag
+        },
+	    nil,
+        --s.mylayoutbox,
+        -- spr_small,
+        -- s.mypromptbox,
+        --s.mytasklist, -- Middle widget
+        {
+            -- Right widgets
+            layout = wibox.layout.fixed.horizontal,
+            wibox.widget.systray(),
+            spr_right, 
+            netdown_icon,
+            networkwidget,
+            netup_icon,
+            bottom_bar,
+            mem_icon,
+            memwidget,
+            bottom_bar,
+            cpu_icon,
+            cpuwidget,
+            bottom_bar,
+            calendar_icon,
+            calendarwidget,
+            bottom_bar,
+            clock_icon,
+            clockwidget,
+        },
+    }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(32) })
+--    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(32) })
 
     -- Add widgets to the wibox
+  --[[
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
@@ -340,54 +355,25 @@ function theme.at_screen_connect(s)
         nil, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.widget.systray(),
+            --wibox.widget.systray(),
             --theme.mail.widget,
             --bat.widget,
-            spr_right,
-            musicwidget,
-            bar,
-            prev_icon,
-            next_icon,
-            stop_icon,
-            play_pause_icon,
-            bar,
-            mpd_icon,
-            bar,
-            spr_very_small,
-            volumewidget,
-            spr_left,
+            --spr_right,
+            --musicwidget,
+            --bar,
+            --prev_icon,
+            --next_icon,
+            --stop_icon,
+            --play_pause_icon,
+            --bar,
+            --mpd_icon,
+            --bar,
+            --spr_very_small,
+            --volumewidget,
+            --spr_left,
         },
     }
-
-    -- Create the bottom wibox
-    s.mybottomwibox = awful.wibar({ position = "bottom", screen = s, border_width = dpi(0), height = dpi(32) })
-    s.borderwibox = awful.wibar({ position = "bottom", screen = s, height = dpi(1), bg = theme.fg_focus, x = dpi(0), y = dpi(33)})
-
-    -- Add widgets to the bottom wibox
-    s.mybottomwibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            mylauncher,
-        },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            spr_bottom_right,
-            netdown_icon,
-            networkwidget,
-            netup_icon,
-            bottom_bar,
-            cpu_icon,
-            cpuwidget,
-            bottom_bar,
-            calendar_icon,
-            calendarwidget,
-            bottom_bar,
-            clock_icon,
-            clockwidget,
-        },
-    }
+    ]]--
 end
 
 return theme
