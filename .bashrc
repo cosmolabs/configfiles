@@ -101,6 +101,7 @@ function extract ()
 ##### Arch linux - commands #####
 ##### Begin #####
 
+# Function that identifies orphan packages
 function pac_orph ()
 {
 	echo -e "\nOrphans : pacman -Qdt" # prints out orphans with their versions.
@@ -108,13 +109,14 @@ function pac_orph ()
 	echo ""
 	pacman -Qdt	
 }
-
+# Function that removes orphan packages
 function rm_pac_orph ()
 {
 	echo -e "\nRemove Orphans : pacman -Rsn soruced with pacman -Qqdt"
 	echo ""
 	sudo pacman -Rsn $(pacman -Qqdt)
 }
+# Function to generate audio waveform with blue and while color.
 function audio_wave_form()
 {
     if [[ $# == 2 ]]
@@ -125,6 +127,7 @@ function audio_wave_form()
     fi
 }
 
+# Functin to Genarate wave form with colors
 function audio_wave_form_with_colors()
 {
     if [[ $# == 2 ]]
@@ -133,6 +136,27 @@ function audio_wave_form_with_colors()
     else
         echo -e "\nFunction accepts 2 parameters a path to audio file and a path to store video file."
     fi
+}
+# Function to copy iso to an usb drive
+function cpyiso()
+{
+    if [[ $# == 2 ]]
+    then
+        echo -e "\nInput file path is : " $1
+        echo -e "\nOutput device path is : " $2
+        read -p "Are you good to copy data to output device? " userAgreement
+        if [[ $userAgreement == "Yes" ]]
+        then
+            echo -e "\nCopying file to output path.......\n"
+           sudo dd if=$1 of=$2 bs=4MB status=progress && sync
+            echo -e "Copy complete." 
+        else
+            echo -e "\n\nOk! ReThink!!!\n"
+        fi
+    else
+        echo -e "\nFunction accepts 2 parameters an input file path and an output file path.\n" 
+    fi
+
 }
 ##### End #####
 ##### Arch linux - commands #####

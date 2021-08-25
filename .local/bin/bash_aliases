@@ -8,6 +8,8 @@ alias jctl="journalctl -p 3 -xb"
 # Ram deatails
 alias ram="free -mth"
 
+#Space occupied by a specific file or folder
+alias space="du -sh"
 # Folder size
 alias fs="du -h --max-depth=0"
 
@@ -68,6 +70,8 @@ alias refersh_mirrors="sudo reflector -f 30 -l 30 --number 10 --verbose --save /
 alias pacman='sudo pacman --color auto'
 alias unlock="sudo rm /var/lib/pacman/db.lck"
 alias rmpacmanlock="sudo rm /var/lib/pacman/db.lck"
+alias update-sys='sudo pacman -Syu'
+alias update-db-sys='sudo pacman -Syuu'
 
 # End
 #### Arch Linux aliases ####
@@ -76,7 +80,7 @@ alias rmpacmanlock="sudo rm /var/lib/pacman/db.lck"
 alias aria2c-sf="aria2c --show-files"
 alias aria2c-tor="aria2c --seed-time=0"
 
-# User available in the system.
+# Users available in the system.
 alias users="cut -d: -f1 /etc/passwd"
 
 #### Crypto currencies ####
