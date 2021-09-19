@@ -43,7 +43,7 @@ COLOR_YELLOW="\[$(tput setaf 3)\]"
 COLOR_BLUE="\[$(tput setaf 4)\]"
 COLOR_PURPLE="\[$(tput setaf 5)\]"
 COLOR_CYAN="\[$(tput setaf 6)\]"
-COLOR_WHITE="\[$(tput setaf 7)\]"
+COLOR_WHITE="[$(tput setaf 6)\]"
 COLOR_BLUE="\[$(tput setaf 8)\]"
 COLOR_RESET="\[$(tput sgr0)\]"
 COLOR_BOLD="\[$(tput bold)\]"
@@ -160,3 +160,10 @@ function cpyiso()
 }
 ##### End #####
 ##### Arch linux - commands #####
+
+# Starship prompt initialization
+
+if pacman -Qs starship > /dev/null
+then
+    eval "$(starship init bash)"
+fi

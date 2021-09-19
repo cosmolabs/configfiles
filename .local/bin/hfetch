@@ -860,43 +860,43 @@ c03=$'\e[0;33m' #d tan
 c04=$'\e[0;34m' #d grey
 c05=$'\e[0;35m' #d pink
 c06=$'\e[0;36m' #d teal
-c07=$'\e[0;37m' #d white
+c07=$'\e[38;2;48;113;219m' #d white
 
-c08=$'\e[1;30m' #l black
+c08=$'\e[0;28;31;36m' #l black
 c09=$'\e[1;31m' #l red
 c10=$'\e[1;32m' #d brown
 c11=$'\e[1;33m' #l tan
 c12=$'\e[1;34m' #l blue
 c13=$'\e[1;35m' #l pink
 c14=$'\e[1;36m' #l teal
-c15=$'\e[1;37m' #l white
+c15=$'\e[38;2;223;223;223m' #l white
 
 f0=$'\e[0;32m'
-f1=$'\e[1;37m'
-f2=$'\e[0;37m'
+f1=$'\e[1;97m'
+f2=$'\e[0;47m'
 
 
 cat << EOF
 
-${c01}▉▉  | ${f2}System ${c08}....... $f1$system
-${c09}  ▉▉| ${f2}Packages ${c08}..... $f1$(get_packages)
-${c07}▉▉  | ${f2}Uptime  ${c08}...... $f1$(get_uptime)
-${c15}  ▉▉| ${f2}Resolution  ${c08}.. $f1$res
+${c01}▉▉  | ${f2}System ${c08}	.......	$f1$system
+${c09}  ▉▉| ${f2}Packages ${c08}.......	$f1$(get_packages)
+${c07}▉▉  | ${f2}Uptime  ${c08}	.......	$f1$(get_uptime)
+${c15}  ▉▉| ${f2}Resolution  ${c08}....	$f1$res
 ${c02}▉▉  |
-${c10}  ▉▉| ${f2}WM ${c08}........... $f1$wmname
-${c03}▉▉  | ${f2}Shell ${c08}........ $f1$(get_shell)
-${c11}  ▉▉| ${f2}Terminal ${c08}..... $f1$term
-${c08}▉▉  | ${f2}Term Font ${c08}.... $f1$termfn
+${c10}  ▉▉| ${f2}WM ${c08}	.......	$f1$wmname
+${c03}▉▉  | ${f2}Shell ${c08}	.......	$f1$(get_shell)
+${c11}  ▉▉| ${f2}Terminal ${c08}.......	$f1$term
+${c08}▉▉  | ${f2}Term Font ${c08}......	$f1$termfn
 ${c12}  ▉▉|
-${c05}▉▉  | ${f2}Kernel ${c08}....... $f1$(get_kernel)
-${c13}  ▉▉| ${f2}Processor ${c08}.... $f1$(get_cpu)
-${c06}▉▉  | ${f2}Gpu ${c08}.......... $f1$(get_gpu)
+${c05}▉▉  | ${f2}Kernel ${c08}	....... $f1$(get_kernel)
+${c13}  ▉▉| ${f2}Processor ${c08}......	$f1$(get_cpu)
+${c06}▉▉  | ${f2}Gpu ${c08}	.......	$f1$(get_gpu)
 ${c14}  ▉▉|
-${c01}▉▉  | ${f2}Disk ${c08}......... $f1$(get_disk)
+${c01}▉▉  | ${f2}Disk ${c08}	.......	$f1$(get_disk)
 ${c09}  ▉▉| 
-${c07}▉▉  | ${f2}Birthday ${c08}..... $f1$birthd
-${c15}  ▉▉| ${f2}Memory ${c08}....... $f1$(get_mem)
+${c07}▉▉  | ${f2}Birthday ${c08}.......	$f1$birthd
+${c15}  ▉▉| ${f2}Memory ${c08}	....... $f1$(get_mem)
 ${c02}▉▉  | 
-${c10}  ▉▉| ${f2}Today ${c08}....... $f1$(date +"%d %B, %Y")
+${c10}  ▉▉| ${f2}Today ${c08}	....... $f1$(date +"%d %B, %Y")
 
 EOF
