@@ -84,6 +84,15 @@ keys = [
     Key([mod, "shift"], "space", lazy.window.toggle_floating(),
         desc="Changing layout to floating"), 
 
+    # Minimize and maximize windows
+    Key([mod], "m", lazy.layout.maximize(),
+        desc="Minimize and maximize windows"),
+
+    # Toggle bar
+    Key([mod], "f", lazy.window.toggle_fullscreen(),
+        desc="Show and hide bar."),
+
+ 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -172,6 +181,7 @@ widget_defaults = dict(
     font='sans',
     fontsize=12,
     padding=3,
+    background=colors[1]
 )
 extension_defaults = widget_defaults.copy()
 
@@ -224,7 +234,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
 ])
-auto_fullscreen = True
+auto_fullscreen = False
 focus_on_window_activation = "smart"
 reconfigure_screens = True
 
