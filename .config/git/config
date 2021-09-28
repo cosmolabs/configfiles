@@ -29,3 +29,5 @@
 [delta]
 	features = line-numbers decorations
 	line-numbers = true
+[pull]
+	rebase = false
