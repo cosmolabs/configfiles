@@ -9,9 +9,10 @@
       <property name="position" type="string" value="p=6;x=0;y=0"/>
       <property name="length" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="icon-size" type="uint" value="15"/>
-      <property name="size" type="uint" value="20"/>
+      <property name="icon-size" type="uint" value="16"/>
+      <property name="size" type="uint" value="26"/>
       <property name="plugin-ids" type="array">
+        <value type="int" value="1"/>
         <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="4"/>
@@ -24,10 +25,13 @@
         <value type="int" value="12"/>
         <value type="int" value="13"/>
         <value type="int" value="14"/>
+        <value type="int" value="7"/>
       </property>
+      <property name="disable-struts" type="bool" value="false"/>
     </property>
   </property>
   <property name="plugins" type="empty">
+    <property name="plugin-1" type="string" value="applicationsmenu"/>
     <property name="plugin-2" type="string" value="tasklist">
       <property name="grouping" type="uint" value="1"/>
     </property>
@@ -42,19 +46,13 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
-        <value type="string" value="notes"/>
-        <value type="string" value="deadbeef"/>
-        <value type="string" value="blueberry-tray.py"/>
         <value type="string" value="networkmanager applet"/>
-      </property>
-      <property name="known-items" type="array">
-        <value type="string" value="redshift"/>
       </property>
     </property>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance106254;chromium.instance125208;chromium.instance1515;chromium.instance1656;chromium.instance33037;chromium.instance4045;chromium.instance7640;chromium.instance8284"/>
+      <property name="mpris-players" type="string" value="firefox.instance14745;firefox.instance1985;firefox.instance4630"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-10" type="string" value="notification-plugin"/>
@@ -66,15 +64,6 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-14" type="string" value="actions"/>
-    <property name="notes" type="empty">
-      <property name="new-window" type="empty">
-        <property name="always-on-top" type="bool" value="true"/>
-        <property name="width" type="int" value="240"/>
-        <property name="height" type="int" value="300"/>
-      </property>
-      <property name="global" type="empty">
-        <property name="tabs-position" type="int" value="1"/>
-      </property>
-    </property>
+    <property name="plugin-7" type="string" value="showdesktop"/>
   </property>
 </channel>
