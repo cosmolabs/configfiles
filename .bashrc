@@ -12,9 +12,9 @@ fi
 
 # Displays system info
 # Fetching the script from user's bin folder
-if [ -f "$HOME/.local/bin/hfetch" ] ; then 
-	clear && hfetch 
-fi
+# if [ -f "$HOME/.local/bin/hfetch" ] ; then 
+	# clear && hfetch 
+# fi
 
 # Linking aliases file
 if [ -f "$HOME/.local/bin/bash_aliases" ] ; then
@@ -158,8 +158,17 @@ function cpyiso()
     fi
 
 }
+
+# Function to add github keys
+function addGithubKeys()
+{
+	eval $(ssh-agent) && ssh-add ~/.ssh/github_keys
+}
 ##### End #####
 ##### Arch linux - commands #####
+
+# Executing neofetch
+# neofetch
 
 # Starship prompt initialization
 
