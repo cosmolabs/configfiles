@@ -59,9 +59,9 @@
 (setq org-publish-project-alist
 '(
 	("org-notes"
-		:base-directory "~/gitRepos/docs/org/cosmolabs.github.io/"
+		:base-directory "~/gitrepos/docs/org/cosmolabs.github.io/"
 		:base-extension "org"
-		:publishing-directory "~/gitRepos/cosmolabs.github.io/"
+		:publishing-directory "~/gitrepos/cosmolabs.github.io/"
 		:recursive t
 		:publishing-function org-html-publish-to-html
 		:headline-levels 4             	 ; Just the default for this project.
@@ -71,9 +71,9 @@
 		:sitemap-title "Sitemap"         ; ... with title 'Sitemap'.
 	 )
 	("org-static"
-		:base-directory "~/gitRepos/docs/org/cosmolabs.github.io/"
+		:base-directory "~/gitrepos/docs/org/cosmolabs.github.io/"
 		:base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-		:publishing-directory "~/gitRepos/cosmolabs.github.io/"
+		:publishing-directory "~/gitrepos/cosmolabs.github.io/"
 		:recursive t
 		:publishing-function org-publish-attachment
        )
