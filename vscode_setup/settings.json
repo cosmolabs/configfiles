@@ -1,0 +1,14 @@
+{
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "workbench.colorTheme": "Nord",
+    "cSpell.userWords": [
+        "Ganesh",
+        "Kuramsetti",
+        "repos"
+    ],
+    "npm.fetchOnlinePackageInfo": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+}
