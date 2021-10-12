@@ -91,3 +91,8 @@ alias crypto_ETH="curl rate.sx/ETH"
 alias crypto_ADA="curl rate.sx/ADA"
 alias crypto_USDT="curl rate.sx/USDT"
 alias crypto_BUSD="curl rate.sx/BUSD"
+
+## using exec with find command
+
+# copying pictures from gitrepo to wallpapers folder
+alias cpy-wlpprs="find ~/gitrepos/wallpapers/ -type f -iname "*g" -exec cp {} ~/Pictures/Wallpapers_Full/ \;"
