@@ -62,6 +62,10 @@
       <property name="&lt;Super&gt;o" type="string" value="xfce4-appfinder">
         <property name="startup-notify" type="bool" value="true"/>
       </property>
+      <property name="&lt;Super&gt;v" type="string" value="/usr/bin/VirtualBox"/>
+      <property name="&lt;Super&gt;i" type="string" value="/usr/bin/firefox">
+        <property name="startup-notify" type="bool" value="true"/>
+      </property>
     </property>
   </property>
   <property name="xfwm4" type="empty">

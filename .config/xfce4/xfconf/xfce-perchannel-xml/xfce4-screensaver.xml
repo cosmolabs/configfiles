@@ -8,6 +8,7 @@
         <value type="string" value="screensavers-xfce-floaters"/>
       </property>
     </property>
+    <property name="fullscreen-inhibit" type="bool" value="true"/>
   </property>
   <property name="lock" type="empty">
     <property name="embedded-keyboard" type="empty">
@@ -16,10 +17,11 @@
   </property>
   <property name="screensavers" type="empty">
     <property name="xfce-floaters" type="empty">
-      <property name="show-paths" type="bool" value="false"/>
-      <property name="arguments" type="string" value="-n 5 -r"/>
-      <property name="do-rotations" type="bool" value="true"/>
+      <property name="show-paths" type="bool" value="true"/>
+      <property name="arguments" type="string" value=""/>
+      <property name="do-rotations" type="bool" value="false"/>
       <property name="print-stats" type="bool" value="false"/>
+      <property name="number-of-images" type="int" value="10"/>
     </property>
   </property>
 </channel>

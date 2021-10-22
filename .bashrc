@@ -162,7 +162,7 @@ function cpyiso()
 # Function to add github keys
 function addGithubKeys()
 {
-	eval $(ssh-agent) && ssh-add ~/.ssh/github_keys
+	eval $(ssh-agent) && ssh-add ""
 }
 ##### End #####
 ##### Arch linux - commands #####
