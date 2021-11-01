@@ -17,3 +17,5 @@ virtualbox-host-modules-arch
 flatpak
 simplescreenrecorder
 fd
+stellarium
+python-pip
