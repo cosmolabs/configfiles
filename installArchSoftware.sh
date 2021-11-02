@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 
 doas pacman -Syu
-doas pacman -S --needed - < ./pkgs.list
+doas pacman -S --needed - < ./archPkgs.list
