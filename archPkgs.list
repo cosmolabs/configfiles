@@ -23,3 +23,7 @@ nomacs
 pycharm-community-edition
 ghostwriter
 hunspell-en_US
+bluez
+bluez-utils
+# blueman
+wkhtmltopdf
