@@ -27,3 +27,5 @@ bluez
 bluez-utils
 # blueman
 wkhtmltopdf
+# encryption tools
+veracrypt
