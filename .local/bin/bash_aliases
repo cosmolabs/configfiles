@@ -96,3 +96,6 @@ alias crypto_BUSD="curl rate.sx/BUSD"
 
 # copying pictures from gitrepo to wallpapers folder
 alias cpy-wlpprs="find ~/gitrepos/wallpapers/ -type f -iname "*g" -exec cp {} ~/Pictures/Wallpapers_Full/ \;"
+
+# language tool alias
+alias langtool="languagetool &"

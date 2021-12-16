@@ -23,8 +23,9 @@ nomacs
 pycharm-community-edition
 ghostwriter
 hunspell-en_US
-bluez
-bluez-utils
+# Bluetooth utilities
+# bluez
+# bluez-utils
 # blueman
 wkhtmltopdf
 # encryption tools
