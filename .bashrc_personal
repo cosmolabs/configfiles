@@ -45,15 +45,10 @@ COLOR_BLUE="\[$(tput setaf 8)\]"
 COLOR_RESET="\[$(tput sgr0)\]"
 COLOR_BOLD="\[$(tput bold)\]"
 
-_set_my_PS1() {
-    PS1='[\u:\h \W]\$ $(precmd) - '
-}
-_set_my_PS1
-unset -f _set_my_PS1
 
-#PS1="
-#[ ${COLOR_GREEN}\h${COLOR_RESET} ] - ${COLOR_RESET}\\w ${COLOR_RESET}${COLOR_YELLOW}\$(precmd)${COLOR_RESET}
-#${COLOR_BOLD}>${COLOR_RESET} "
+PS1="
+[ ${COLOR_GREEN}\h${COLOR_RESET} ] - ${COLOR_RESET}\\w ${COLOR_RESET}${COLOR_YELLOW}\$(precmd)${COLOR_RESET}
+${COLOR_BOLD}>${COLOR_RESET} "
 #[${COLOR_BOLD}${COLOR_PURPLE}\u : ${COLOR_GREEN}\h${COLOR_RESET}] - ${COLOR_RESET}\\W ${COLOR_RESET}${COLOR_YELLOW}\$(precmd)${COLOR_RESET}
 #${COLOR_BOLD}:${COLOR_RESET} "
 
