@@ -2,7 +2,7 @@
 # hardware info --short
 alias hardwareInfo="hwinfo --short"
 # probe in great detail
-alias probe="doas -E hw-probe -all"
+alias probe="sudo -E hw-probe -all"
 # Journal details
 alias jctl="journalctl -p 3 -xb"
 # Ram deatails
@@ -39,8 +39,8 @@ alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
 # System maintainence
-alias ssn="doas shutdown now"
-alias sr="doas reboot"
+alias ssn="sudo shutdown now"
+alias sr="sudo reboot"
 
 # Processes
 alias proc="ps auxf"
@@ -64,15 +64,14 @@ alias pkg-details="expac -H M '%m\t%n' | sort -h | nl"
 alias recpkgs="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -250 | nl"
 
 # Fastest mirrors near by.
-alias refersh_mirrors="doas reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias refersh_mirrors="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
 
 # Pacman
-# alias pacman='doas pacman --color auto'
+# alias pacman='sudo pacman --color auto'
 alias pacman='pacman --color auto'
-alias unlock="doas rm /var/lib/pacman/db.lck"
-alias rmpacmanlock="doas rm /var/lib/pacman/db.lck"
-alias update-sys='doas pacman -Syu'
-alias update-db-sys='doas pacman -Syuu'
+alias unlock="sudo rm /var/lib/pacman/db.lck"
+alias update-sys='sudo pacman -Syu'
+alias update-db-sys='sudo pacman -Syuu'
 
 # End
 #### Arch Linux aliases ####

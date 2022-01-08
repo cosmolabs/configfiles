@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 #ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 
@@ -10,15 +13,9 @@ if [ -d "$HOME/.emacs.d" ] ;
   then PATH="$PATH:$HOME/.emacs.d/bin"
 fi
 
-# Displays system info
-# Fetching the script from user's bin folder
-# if [ -f "$HOME/.local/bin/hfetch" ] ; then 
-	# clear && hfetch 
-# fi
-
 # Linking aliases file
-if [ -f "$HOME/.local/bin/bash_aliases" ] ; then
-	. $HOME/.local/bin/bash_aliases
+if [ -f "$HOME/.bash_aliases_personal" ] ; then
+	. $HOME/.bash_aliases_personal
 fi
 
 # Default editor
@@ -48,9 +45,15 @@ COLOR_BLUE="\[$(tput setaf 8)\]"
 COLOR_RESET="\[$(tput sgr0)\]"
 COLOR_BOLD="\[$(tput bold)\]"
 
-PS1="
-[ ${COLOR_GREEN}\h${COLOR_RESET} ] - ${COLOR_RESET}\\w ${COLOR_RESET}${COLOR_YELLOW}\$(precmd)${COLOR_RESET}
-${COLOR_BOLD}>${COLOR_RESET} "
+_set_my_PS1() {
+    PS1='[\u:\h \W]\$ $(precmd) - '
+}
+_set_my_PS1
+unset -f _set_my_PS1
+
+#PS1="
+#[ ${COLOR_GREEN}\h${COLOR_RESET} ] - ${COLOR_RESET}\\w ${COLOR_RESET}${COLOR_YELLOW}\$(precmd)${COLOR_RESET}
+#${COLOR_BOLD}>${COLOR_RESET} "
 #[${COLOR_BOLD}${COLOR_PURPLE}\u : ${COLOR_GREEN}\h${COLOR_RESET}] - ${COLOR_RESET}\\W ${COLOR_RESET}${COLOR_YELLOW}\$(precmd)${COLOR_RESET}
 #${COLOR_BOLD}:${COLOR_RESET} "
 
@@ -62,6 +65,11 @@ fi
 precmd() {
     echo `git_prompt_precmd`
 }
+
+## Use the up and down arrow keys for finding a command in history
+## (you can write some initial letters of the command first).
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
 
 #### End ####
 
@@ -116,6 +124,9 @@ function rm_pac_orph ()
 	echo ""
 	sudo pacman -Rsn $(pacman -Qqdt)
 }
+
+##### Arch linux - commands #####
+
 # Function to generate audio waveform with blue and while color.
 function audio_wave_form()
 {
@@ -165,14 +176,19 @@ function addGithubKeys()
 	eval $(ssh-agent) && ssh-add ""
 }
 ##### End #####
-##### Arch linux - commands #####
 
 # Executing neofetch
 # neofetch
 
+# Displays system info
+# Fetching the script from user's bin folder
+if [ -f "$HOME/.local/bin/hfetch" ] ; then 
+	clear && hfetch 
+fi
+
 # Starship prompt initialization
 
-if pacman -Qs starship > /dev/null
-then
-    eval "$(starship init bash)"
-fi
+# if pacman -Qs starship > /dev/null
+# then
+#    eval "$(starship init bash)"
+# fi

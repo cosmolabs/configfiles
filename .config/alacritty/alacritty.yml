@@ -11,14 +11,19 @@ window:
   #   - Windowed
   #   - Maximized
   #   - Fullscreen
-  startup_mode: Maximized
-  title: Alacritty
+# Values for `decorations`:
+#     - full: Borders and title bar
+#     - none: Neither borders nor title bar  startup_mode: Windowed
+  title: COSMOTERMINAL
   dynamic_title: true
-  decorations: none
+  decorations: full
   padding:
     x: 3
     y: 3
   dynamic_padding: false
+  position:
+    x: 0
+    y: 0
   
 cursor:
   #Cursor style
@@ -29,7 +34,7 @@ cursor:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    shape: Beam
+    shape: Block
     blinking: On
     
 # Copied from dtos config
@@ -237,8 +242,8 @@ font:
     family: Source Code Pro
     style: Bold Italic
 
-  size: 12.0
-background_opacity: 0.90
+  size: 13.0
+background_opacity: 0.95
 
 
 # Key bindings
