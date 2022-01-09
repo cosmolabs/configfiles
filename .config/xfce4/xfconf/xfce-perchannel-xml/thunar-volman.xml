@@ -4,4 +4,10 @@
   <property name="automount-media" type="empty">
     <property name="enabled" type="bool" value="true"/>
   </property>
+  <property name="autobrowse" type="empty">
+    <property name="enabled" type="bool" value="true"/>
+  </property>
+  <property name="autoopen" type="empty">
+    <property name="enabled" type="bool" value="true"/>
+  </property>
 </channel>

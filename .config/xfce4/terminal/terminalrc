@@ -30,6 +30,6 @@ TitleInitial=cosmoterminal
 ScrollingUnlimited=TRUE
 FontName=Source Code Pro Medium Italic 14
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
-BackgroundDarkness=0,950000
+BackgroundDarkness=0,900000
 ColorCursorForeground=#35358484e4e4
 
