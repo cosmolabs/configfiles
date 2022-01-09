@@ -7,7 +7,8 @@ virtualbox
 firefox
 expac
 alacritty
-opendoas
+# Alternative to sudo
+# opendoas
 mpv
 youtube-dl
 speedcrunch
@@ -23,6 +24,7 @@ nomacs
 pycharm-community-edition
 ghostwriter
 hunspell-en_US
+cmatrix
 # Bluetooth utilities
 # bluez
 # bluez-utils
