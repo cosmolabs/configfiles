@@ -1,14 +1,23 @@
 {
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
-    "workbench.colorTheme": "Nord",
-    "cSpell.userWords": [
-        "Ganesh",
-        "Kuramsetti",
-        "repos"
-    ],
-    "npm.fetchOnlinePackageInfo": false,
     "workbench.iconTheme": "material-icon-theme",
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.fontSize": 16,
+    "editor.wordWrap": "on",
+    "telemetry.telemetryLevel": "off",
+    "notebook.lineNumbers": "on",
+    "problems.showCurrentInStatus": true,
+    "terminal.integrated.fontSize": 16,
+    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'SourceCodePro'",
+    "scm.alwaysShowRepositories": true,
+    "search.showLineNumbers": true,
+    "window.titleBarStyle": "custom",
+    "workbench.quickOpen.preserveInput": true,
+    "workbench.list.smoothScrolling": true,
+    "workbench.enableExperiments": false,
+    "editor.suggest.showStatusBar": true,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.smoothScrolling": true,
+    "editor.mouseWheelZoom": true
 }
